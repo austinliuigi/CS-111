@@ -7,7 +7,16 @@
 static struct proc_dir_entry *entry;
 
 static int proc_count(struct seq_file *m, void *v){
-	// TODO: it's all yours
+	struct task_struct *task;  // task used for `for_each_process`
+
+	// iterate through each process, storing a running total
+	int count = 0;
+	for_each_process(task) {
+		count++;
+	}
+
+	// print out result when user reads the /proc file created by this module
+	seq_printf(m, "%d\n", count);
 	return 0;
 }
 
@@ -27,6 +36,6 @@ static void __exit proc_count_exit(void)
 module_init(proc_count_init);
 module_exit(proc_count_exit);
 
-MODULE_AUTHOR("Your Name");
+MODULE_AUTHOR("Austin Liu");
 MODULE_DESCRIPTION("CS111 lab0 count proc number");
 MODULE_LICENSE("GPL");
