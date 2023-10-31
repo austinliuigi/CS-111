@@ -1,28 +1,21 @@
 # You Spin Me Round Robin
 
-TODO
+In this lab, we implement the round robin scheduling algorithm.
 
 ## Building
 
 ```shell
-TODO
+make
 ```
 
 ## Running
 
-cmd for running TODO
 ```shell
-TODO
-```
-
-results TODO
-```shell
-TODO
-
+./rr <process_file> <quantum_length>
 ```
 
 ## Cleaning up
 
 ```shell
-TODO
+make clean
 ```
